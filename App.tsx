@@ -11,10 +11,10 @@ import Auth from './components/Auth.tsx';
 import { getGadgetAdvice } from './services/geminiService.ts';
 import { 
   Send, MessageSquare, ShoppingBag, ArrowRight, ShieldCheck, Heart, Trash2, Plus, Minus, 
-  Info, Gavel, TrendingUp, AlertTriangle, Cpu, Star, Layers, PackageCheck, Tag, ChevronLeft,
+  Info, Gavel, TrendingUp, AlertTriangle, AlertCircle, Cpu, Star, Layers, PackageCheck, Tag, ChevronLeft,
   LifeBuoy, Mail, Users as UsersIcon, Eye, EyeOff, User as UserIcon, CheckCircle, Globe, Shield, Zap,
   MessageCircle, HelpCircle, FileQuestion, ChevronRight, Share2, Award, Phone, MapPin, Lock,
-  Save, XCircle
+  Save, XCircle, Github, Twitter, Linkedin, Headphones, Search
 } from 'lucide-react';
 
 const ProductCard: React.FC<{ p: Product, addToCart: (id: string) => void, isReseller?: boolean }> = ({ p, addToCart, isReseller = false }) => (
@@ -61,6 +61,248 @@ const BackButton = () => (
     <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" /> Back to Home
   </Link>
 );
+
+const AboutUs = () => (
+  <div className="page-enter p-8 max-w-5xl mx-auto space-y-16 pb-24">
+    <BackButton />
+    <section className="text-center space-y-6">
+      <div className="inline-block bg-indigo-50 text-indigo-600 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest mb-4">The Future of Commerce</div>
+      <h1 className="text-5xl md:text-7xl font-black text-gray-900 tracking-tighter">Revolutionizing Tech <br/><span className="text-indigo-600">Trust Since 2024.</span></h1>
+      <p className="text-gray-500 text-lg max-w-2xl mx-auto font-medium">ElectroHub is more than a marketplace. We are a high-trust ecosystem built for enthusiasts who demand authenticity and transparency in the electronics market.</p>
+    </section>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {[
+        { icon: <ShieldCheck size={32} />, title: 'Verified Only', desc: 'Every seller undergoes a rigorous identity and product quality verification process.' },
+        { icon: <Globe size={32} />, title: 'Global Sourcing', desc: 'Access exclusive tech from around the world, handled with white-glove logistics.' },
+        { icon: <Award size={32} />, title: 'Expert Advice', desc: 'Our AI-driven Gemini advisors help you compare specs and make the best buying decisions.' }
+      ].map((item, idx) => (
+        <div key={idx} className="bg-white p-10 rounded-[40px] border border-gray-100 shadow-sm hover:shadow-xl transition-all">
+          <div className="text-indigo-600 mb-6 bg-indigo-50 w-16 h-16 flex items-center justify-center rounded-2xl">{item.icon}</div>
+          <h3 className="text-xl font-black text-gray-900 mb-3">{item.title}</h3>
+          <p className="text-gray-500 font-medium text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <section className="bg-gray-900 rounded-[50px] p-12 text-white overflow-hidden relative">
+      <div className="relative z-10 flex flex-col md:flex-row items-center gap-12">
+        <div className="flex-1 space-y-6">
+          <h2 className="text-4xl font-black tracking-tight">Our High-Trust Architecture</h2>
+          <p className="text-gray-400 font-medium leading-relaxed">We leverage a decentralized verification protocol to ensure that refurbished items are accurately graded and new items are 100% authentic. No more guessing, no more fake reviews.</p>
+          <div className="flex gap-4">
+            <div className="bg-white/10 px-6 py-3 rounded-2xl">
+              <span className="block text-2xl font-black">50k+</span>
+              <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Verified Users</span>
+            </div>
+            <div className="bg-white/10 px-6 py-3 rounded-2xl">
+              <span className="block text-2xl font-black">₹500Cr+</span>
+              <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Total Trade</span>
+            </div>
+          </div>
+        </div>
+        <div className="flex-1">
+          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" className="rounded-[32px] shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500" alt="Cybersecurity" />
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
+const ContactUs = () => (
+  <div className="page-enter p-8 max-w-6xl mx-auto space-y-12 pb-24">
+    <BackButton />
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="space-y-8">
+        <div>
+          <h1 className="text-5xl font-black text-gray-900 tracking-tight">Get in Touch</h1>
+          <p className="text-gray-500 font-medium mt-4">Our specialized tech support team is ready to assist you with any inquiries regarding orders, verification, or technical specs.</p>
+        </div>
+
+        <div className="space-y-6">
+          <div className="flex gap-6 items-center p-6 bg-white rounded-3xl border border-gray-100 shadow-sm">
+            <div className="bg-indigo-600 text-white p-4 rounded-2xl"><Mail size={24} /></div>
+            <div>
+              <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Email Us</p>
+              <p className="text-lg font-bold text-gray-900">support@electrohub.tech</p>
+            </div>
+          </div>
+          <div className="flex gap-6 items-center p-6 bg-white rounded-3xl border border-gray-100 shadow-sm">
+            <div className="bg-indigo-600 text-white p-4 rounded-2xl"><Phone size={24} /></div>
+            <div>
+              <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Call Us</p>
+              <p className="text-lg font-bold text-gray-900">+91 (800) 123-4567</p>
+            </div>
+          </div>
+          <div className="flex gap-6 items-center p-6 bg-white rounded-3xl border border-gray-100 shadow-sm">
+            <div className="bg-indigo-600 text-white p-4 rounded-2xl"><MapPin size={24} /></div>
+            <div>
+              <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Visit Hub HQ</p>
+              <p className="text-lg font-bold text-gray-900">Silicon Square, Block 4, Bangalore, KA</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex gap-4 pt-4">
+          <button className="p-4 bg-gray-100 text-gray-600 rounded-2xl hover:bg-indigo-600 hover:text-white transition-all"><Twitter size={24} /></button>
+          <button className="p-4 bg-gray-100 text-gray-600 rounded-2xl hover:bg-indigo-600 hover:text-white transition-all"><Linkedin size={24} /></button>
+          <button className="p-4 bg-gray-100 text-gray-600 rounded-2xl hover:bg-indigo-600 hover:text-white transition-all"><Github size={24} /></button>
+        </div>
+      </div>
+
+      <div className="bg-white p-10 rounded-[50px] border border-gray-100 shadow-xl space-y-6">
+        <h3 className="text-2xl font-black text-gray-900">Send a Message</h3>
+        <div className="space-y-4">
+          <div className="space-y-1">
+            <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest px-2">Your Name</label>
+            <input type="text" className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-indigo-100 outline-none font-bold" placeholder="Alex Rivera" />
+          </div>
+          <div className="space-y-1">
+            <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest px-2">Email Address</label>
+            <input type="email" className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-indigo-100 outline-none font-bold" placeholder="alex@example.com" />
+          </div>
+          <div className="space-y-1">
+            <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest px-2">Message Subject</label>
+            <select className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-indigo-100 outline-none font-bold appearance-none">
+              <option>Technical Support</option>
+              <option>Order Verification</option>
+              <option>Seller Partnership</option>
+              <option>Other Inquiry</option>
+            </select>
+          </div>
+          <div className="space-y-1">
+            <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest px-2">Message</label>
+            <textarea rows={4} className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-indigo-100 outline-none font-bold resize-none" placeholder="How can we help you today?"></textarea>
+          </div>
+          <button className="w-full bg-indigo-600 text-white py-5 rounded-[24px] font-black text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 flex items-center justify-center gap-3">
+            <Send size={24} /> Send Message
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const Community = () => (
+  <div className="page-enter p-8 max-w-6xl mx-auto space-y-16 pb-24">
+    <BackButton />
+    <section className="text-center space-y-8">
+      <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 px-4 py-2 rounded-full font-black text-xs uppercase tracking-widest">
+        <UsersIcon size={16} /> 52,491 Members Online
+      </div>
+      <h1 className="text-6xl font-black text-gray-900 tracking-tighter">The World's Largest <br/><span className="text-indigo-600">Enthusiast Network.</span></h1>
+      <p className="text-gray-500 text-lg max-w-3xl mx-auto font-medium leading-relaxed">Join the inner circle of tech collectors, verified resellers, and extreme enthusiasts. Get early access to auctions and exclusive hub deals.</p>
+    </section>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="bg-white p-12 rounded-[50px] border border-gray-100 shadow-sm space-y-6 flex flex-col justify-between hover:shadow-2xl transition-all">
+        <div className="space-y-4">
+          <div className="bg-indigo-600 text-white w-20 h-20 rounded-[28px] flex items-center justify-center shadow-xl shadow-indigo-100"><MessageCircle size={40} /></div>
+          <h3 className="text-3xl font-black text-gray-900">Join the Hub Discord</h3>
+          <p className="text-gray-500 font-medium leading-relaxed">Real-time alerts for rare gadget drops, live auction strategy rooms, and peer-to-peer tech support.</p>
+        </div>
+        <button className="bg-indigo-600 text-white w-full py-5 rounded-3xl font-black text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-50 flex items-center justify-center gap-3">
+          <Share2 size={24} /> Connect Discord
+        </button>
+      </div>
+
+      <div className="bg-gray-900 p-12 rounded-[50px] text-white space-y-6 flex flex-col justify-between hover:shadow-2xl transition-all">
+        <div className="space-y-4">
+          <div className="bg-white text-indigo-600 w-20 h-20 rounded-[28px] flex items-center justify-center shadow-xl shadow-black/20"><Star size={40} /></div>
+          <h3 className="text-3xl font-black">Elite Hub Rewards</h3>
+          <p className="text-gray-400 font-medium leading-relaxed">Earn Hub Points for every verified transaction. Redeem points for zero-commission bidding vouchers.</p>
+        </div>
+        <button className="bg-white text-indigo-600 w-full py-5 rounded-3xl font-black text-lg hover:bg-gray-100 transition-all shadow-xl flex items-center justify-center gap-3">
+          <Award size={24} /> Explore Rewards
+        </button>
+      </div>
+    </div>
+
+    <section className="bg-indigo-600 rounded-[50px] p-12 text-white flex flex-col md:flex-row items-center justify-between gap-12">
+      <div className="space-y-4 max-w-md">
+        <h2 className="text-4xl font-black tracking-tight">Weekly Hub Digest</h2>
+        <p className="text-indigo-100 font-medium">Get a curated list of upcoming high-value auctions and price trends directly in your inbox.</p>
+      </div>
+      <div className="flex-1 w-full max-w-lg">
+        <div className="relative">
+          <input type="email" placeholder="Enter your email" className="w-full bg-white/10 border-2 border-white/20 rounded-3xl px-8 py-6 text-lg font-black text-white placeholder:text-indigo-200 focus:bg-white/20 outline-none transition-all" />
+          <button className="absolute right-4 top-4 bottom-4 bg-white text-indigo-600 px-8 rounded-2xl font-black hover:bg-indigo-50 transition-all">Subscribe</button>
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
+const Support = () => {
+  const [search, setSearch] = useState('');
+  const faqs = [
+    { q: "How does the verification process work?", a: "Every user must upload government-issued ID. For sellers, we additionally verify product serial numbers against global databases to ensure authenticity." },
+    { q: "What is the reserve price in an auction?", a: "The reserve price is the minimum amount a seller is willing to accept. If the bidding doesn't reach this price, the item isn't sold." },
+    { q: "How are shipping costs calculated?", a: "Shipping is handled by our white-glove logistics partners. Costs depend on weight, fragility, and destination, shown clearly before you bid." },
+    { q: "Can I return a certified pre-owned item?", a: "Yes, all reseller items come with a 48-hour 'Trust Guarantee'. If the item doesn't match the description, we issue a full refund." }
+  ];
+
+  return (
+    <div className="page-enter p-8 max-w-5xl mx-auto space-y-12 pb-24">
+      <BackButton />
+      <div className="text-center space-y-6">
+        <h1 className="text-6xl font-black text-gray-900 tracking-tighter">Support Hub</h1>
+        <div className="relative max-w-2xl mx-auto">
+          <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-400" size={24} />
+          <input 
+            type="text" 
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search for answers..." 
+            className="w-full pl-16 pr-8 py-6 bg-white border border-gray-100 rounded-[32px] text-lg font-bold shadow-xl shadow-gray-100 outline-none focus:ring-4 focus:ring-indigo-100" 
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-12">
+        <div className="space-y-6">
+          <h3 className="text-2xl font-black text-gray-900 px-2 flex items-center gap-2">
+            <HelpCircle className="text-indigo-600" /> Frequently Asked
+          </h3>
+          <div className="space-y-4">
+            {faqs.map((faq, i) => (
+              <div key={i} className="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm hover:border-indigo-600 transition-all cursor-pointer group">
+                <h4 className="font-black text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">{faq.q}</h4>
+                <p className="text-gray-500 font-medium text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="space-y-8">
+           <div className="bg-gray-900 rounded-[50px] p-10 text-white space-y-8">
+             <div className="flex items-center gap-4">
+               <div className="bg-indigo-600 p-4 rounded-2xl"><Headphones size={32} /></div>
+               <h3 className="text-3xl font-black">24/7 Live Support</h3>
+             </div>
+             <p className="text-gray-400 font-medium leading-relaxed">Verified members get instant access to our priority support line for high-value transaction assistance.</p>
+             <button className="w-full bg-white text-indigo-600 py-5 rounded-[24px] font-black text-lg hover:bg-gray-100 transition-all">Start Live Chat</button>
+           </div>
+
+           <div className="bg-indigo-50 rounded-[40px] p-10 border border-indigo-100 space-y-6">
+             <h3 className="text-2xl font-black text-indigo-700">Safety Center</h3>
+             <ul className="space-y-4">
+               {[
+                 { icon: <Shield size={20} />, text: 'Reporting Fraudulent Listings' },
+                 { icon: <Lock size={20} />, text: 'Securing Your Hub Account' },
+                 { icon: <AlertCircle size={20} />, text: 'Payment Protection Policy' }
+               ].map((item, i) => (
+                 <li key={i} className="flex items-center gap-3 text-indigo-600 font-bold hover:translate-x-2 transition-transform cursor-pointer">
+                   {item.icon} <span>{item.text}</span> <ChevronRight size={16} className="ml-auto" />
+                 </li>
+               ))}
+             </ul>
+           </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const AppContent: React.FC = () => {
   const navigate = useNavigate();
@@ -150,7 +392,6 @@ const AppContent: React.FC = () => {
     setProducts(prev => prev.filter(p => p.id !== productId));
   };
 
-  // Fix: Added handleQuickAdd function to bridge sidebar actions with the admin dashboard
   const handleQuickAdd = (condition: 'NEW' | 'RESELLER') => {
     setQuickAddTrigger(condition);
     navigate('/admin');
@@ -370,6 +611,10 @@ const AppContent: React.FC = () => {
           <Route path="/auth" element={<Auth users={users} onLogin={handleLogin} onSignup={handleSignup} />} />
           <Route path="/profile" element={<ProfileView />} />
           <Route path="/cart" element={<CartView />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/support" element={<Support />} />
           <Route path="/auctions" element={<div className="page-enter p-12 max-w-7xl mx-auto"><BackButton /><h1 className="text-5xl font-black mb-12 tracking-tight">Live Hub Auctions</h1><div className="grid grid-cols-1 md:grid-cols-3 gap-10">{auctions.map(a => <AuctionCard key={a.id} auction={a} product={products.find(p => p.id === a.productId)!} />)}</div></div>} />
           <Route path="/deals" element={<div className="page-enter p-12 max-w-7xl mx-auto"><BackButton /><h1 className="text-5xl font-black mb-12 tracking-tight">Gadget Deals</h1><div className="grid grid-cols-2 md:grid-cols-4 gap-8">{products.filter(p => !p.isBiddable).map(p => <ProductCard key={p.id} p={p} addToCart={addToCart} />)}</div></div>} />
           <Route path="/admin" element={
@@ -402,8 +647,8 @@ const AppContent: React.FC = () => {
           <div className="space-y-4">
              <h4 className="text-sm font-black text-gray-900 uppercase tracking-widest">Trust & Safety</h4>
              <ul className="text-gray-500 text-sm font-bold space-y-2">
-               <li>User Verification</li>
-               <li>Escrow Services</li>
+               <li><Link to="/support" className="hover:text-indigo-600">Verification</Link></li>
+               <li><Link to="/about" className="hover:text-indigo-600">Escrow Services</Link></li>
              </ul>
           </div>
           <div className="bg-indigo-50 p-6 rounded-[32px] space-y-4">
