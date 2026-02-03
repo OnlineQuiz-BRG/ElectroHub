@@ -2,7 +2,7 @@
 {
   "version": 2,
   "cleanUrls": true,
-  "framework": null,
+  "trailingSlash": false,
   "rewrites": [
     {
       "source": "/(.*)",
@@ -11,7 +11,7 @@
   ],
   "headers": [
     {
-      "source": "/(.*).(js|css|png|jpg|jpeg|svg|woff2)",
+      "source": "/(.*).(js|tsx|ts|css|png|jpg|jpeg|svg|woff2)",
       "headers": [
         {
           "key": "Cache-Control",
