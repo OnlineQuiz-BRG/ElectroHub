@@ -211,6 +211,7 @@ const AppContent: React.FC = () => {
               <Link to="/deals" className="bg-indigo-600 text-white px-8 py-4 rounded-2xl font-black hover:bg-indigo-700 transition-all shadow-xl hover:-translate-y-1">
                 Shop Deals
               </Link>
+              {/* FIXED: Respect Live Auctions visibility in Hero section */}
               {visibility.liveAuctions && (
                 <Link to="/auctions" className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-2xl font-black hover:bg-white/20 transition-all hover:-translate-y-1">
                   Live Auctions
@@ -324,6 +325,7 @@ const AppContent: React.FC = () => {
                 </div>
               </div>
               <div className="flex gap-6 p-8 border border-gray-100 rounded-[32px] hover:border-indigo-600 transition-all bg-white shadow-sm">
+                {/* FIXED: Changed i-min to h-min */}
                 <div className="bg-blue-50 p-4 rounded-2xl shrink-0 h-min"><MessageCircle size={24} className="text-blue-600" /></div>
                 <div>
                   <h4 className="font-black text-xl mb-2">Smart AI Advisory</h4>
