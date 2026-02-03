@@ -4,6 +4,9 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "scripts": {
+    "build": "mkdir -p .vercel/output/static && cp -r * .vercel/output/static || echo 'Skipping manual output copy'"
+  },
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
