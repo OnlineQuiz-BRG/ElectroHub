@@ -1,7 +1,11 @@
 {
-  "name": "ElectroHub",
-  "description": "A premium high-trust marketplace for electronics featuring verified user profiles, direct purchases, and live bidding auctions.",
+  "name": "ElectroHub - Premium Marketplace",
+  "short_name": "ElectroHub",
+  "description": "High-trust electronics marketplace featuring verified sellers, live auctions, and AI-powered gadget advice.",
   "requestFramePermissions": [
-    "camera"
-  ]
+    "camera",
+    "microphone"
+  ],
+  "theme_color": "#4f46e5",
+  "background_color": "#f9fafb"
 }
