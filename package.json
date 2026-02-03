@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "mkdir -p .vercel/output/static && cp -r * .vercel/output/static || echo 'Skipping manual output copy'"
+    "build": "mkdir -p dist && cp -r . dist/ 2>/dev/null || cp -r * dist/ && rm -rf dist/dist"
   },
   "dependencies": {
     "react": "^19.0.0",
