@@ -1,0 +1,7 @@
+{
+  "name": "ElectroHub",
+  "description": "A premium high-trust marketplace for electronics featuring verified user profiles, direct purchases, and live bidding auctions.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
